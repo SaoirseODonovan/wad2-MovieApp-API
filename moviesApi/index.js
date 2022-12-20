@@ -7,6 +7,8 @@ import './seedData';
 import usersRouter from './api/users';
 import session from 'express-session';
 import passport from './authenticate';
+import upcomingMoviesRouter from './api/upcomingMovies';
+
 
 dotenv.config();
 
@@ -32,6 +34,8 @@ app.use('/api/genres', genresRouter);
 app.use('/api/users', usersRouter);
 // Add passport.authenticate(..)  to middleware stack for protected routes​
 app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+app.use('/api/upcomingMovies', passport.authenticate('jwt', {session: false}), upcomingMoviesRouter);
+//api with id needed here?
 app.use(errHandler);
 
 
