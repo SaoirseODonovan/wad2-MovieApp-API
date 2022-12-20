@@ -10,6 +10,7 @@ import { useQuery } from 'react-query';
 
 
 const UpcomingMoviesPage = (props) => {
+  
 
   // const {setPageFunc} = useContext(NumberingContext);
   
